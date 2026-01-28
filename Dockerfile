@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y dos2unix
 
 # Copy file script và file sql vào container
 COPY entrypoint.sh .
-COPY init.sql .
+COPY KitchenControlBEv1.sql .
 
 # Cấp quyền thực thi cho file script và chuyển đổi định dạng dòng (CRLF -> LF)
 RUN chmod +x entrypoint.sh && dos2unix entrypoint.sh
