@@ -1,3 +1,19 @@
+USE master;
+GO
+
+IF EXISTS(SELECT * FROM sys.databases WHERE name = 'KitchenControlBEv1')
+BEGIN
+    ALTER DATABASE KitchenControlBEv1 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE KitchenControlBEv1;
+END
+GO
+
+CREATE DATABASE KitchenControlBEv1;
+GO
+USE KitchenControlBEv1;
+GO
+
+-- ... (Phần code tạo bảng và Insert data của bạn ở dưới) ...
 CREATE TABLE [roles] (
   [role_id] int PRIMARY KEY IDENTITY(1, 1),
   [role_name] nvarchar(255)
